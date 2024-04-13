@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Materials/Textures/TCom_Wall_Stone3_2x2_8K_height.tif.meta
+Assets/Materials/Textures/TCom_Wall_Stone3_2x2_8K_height.tif.meta
+Assets/Materials/Textures/TCom_Wall_Stone3_2x2_8K_ao.tif.meta
+Assets/Materials/Textures/TCom_Wall_Stone3_2x2_8K_albedo.tif.meta
