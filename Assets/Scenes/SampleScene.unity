@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Streight_A
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -608,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Streight_A
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -819,6 +827,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 1875dbcb933847e438464aa6d4c6dc32, type: 3}
   m_PrefabInstance: {fileID: 218885631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &222562268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222562269}
+  m_Layer: 0
+  m_Name: BulletPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222562269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222562268}
+  m_LocalRotation: {x: 0.05951106, y: -0.994102, z: -0.08395581, w: -0.034219794}
+  m_LocalPosition: {x: 0.04959, y: 0.02774, z: 0.00486}
+  m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.100000024}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450653623681322}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &264824839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,6 +1084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Crosswalk
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 38879fb80d2211342b5c6e8ca726f2f5, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38879fb80d2211342b5c6e8ca726f2f5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1106,6 +1149,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
       propertyPath: m_Name
       value: Road_End_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
       propertyPath: m_RootOrder
@@ -1621,6 +1668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Intersection_A
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1862,6 +1913,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
       propertyPath: m_Name
       value: Road_Cross_Double_B_B
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
       propertyPath: m_RootOrder
@@ -2294,6 +2349,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
       propertyPath: m_Name
       value: Road_Intersection_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
       propertyPath: m_RootOrder
@@ -2869,6 +2928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Intersection_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2973,6 +3036,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
       propertyPath: m_Name
       value: Road_End_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 46aceb8c4fbd8a3478e3bb41629a9afd, type: 3}
       propertyPath: m_RootOrder
@@ -4266,6 +4333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Streight_Double
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e21456eb7a6b18e4480b596463b9692a, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e21456eb7a6b18e4480b596463b9692a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -4462,6 +4533,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_Name
       value: Road_Streight_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_RootOrder
@@ -5373,6 +5448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Intersection_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ea055b41d57bcfa4f933e17644a305ba, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -5512,6 +5591,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e21456eb7a6b18e4480b596463b9692a, type: 3}
       propertyPath: m_Name
       value: Road_Streight_Double (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e21456eb7a6b18e4480b596463b9692a, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e21456eb7a6b18e4480b596463b9692a, type: 3}
       propertyPath: m_RootOrder
@@ -5883,6 +5966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_Streight_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
+      propertyPath: m_TagString
+      value: Road
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -6142,6 +6229,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
       propertyPath: m_Name
       value: Road_Cross_Double_B_B (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e544891603a68eb41a8c40ea47764ab5, type: 3}
       propertyPath: m_RootOrder
@@ -6457,6 +6548,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_Name
       value: Road_Streight_A (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
+      propertyPath: m_TagString
+      value: Road
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f099a1e77db0f43b8f3e7fe072979b, type: 3}
       propertyPath: m_RootOrder
@@ -7006,6 +7101,7 @@ Transform:
   - {fileID: 3908703226844521818}
   - {fileID: 6466380655580610391}
   - {fileID: 3024668110558456789}
+  - {fileID: 222562269}
   m_Father: {fileID: 5215259055631740106}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -77.114, y: -16.801, z: -529.831}
@@ -18466,11 +18562,13 @@ MonoBehaviour:
   _bulletTrace: {fileID: 1088546878578059482, guid: e9216783460d15f4aad7823997868c63, type: 3}
   _bloodEffect: {fileID: 4826331845018425068, guid: 6a244322184b9274ba358f7fd19ccddc, type: 3}
   _totalBullets: 25
-  _magazine: 10
+  _magazine: 500
   _remainingBullet: 0
   _totalBulletsText: {fileID: 633778479}
   _remainingBulletText: {fileID: 435934165}
   _myCam: {fileID: 8099631096193725807}
+  _bulletHive: {fileID: 7351537718479408677, guid: 8c23e2d1d67ab564b9d5d1cdebe331b3, type: 3}
+  _bulletPoint: {fileID: 222562268}
 --- !u!1 &5215259055632036078
 GameObject:
   m_ObjectHideFlags: 0

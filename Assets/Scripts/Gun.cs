@@ -36,7 +36,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private Camera _myCam;
     private int _bulletFired;
 
-
+    [SerializeField] private GameObject _bulletHive;
+    [SerializeField] private GameObject _bulletPoint;
     private void Start()
     {
         _remainingBullet = _magazine;
@@ -48,7 +49,7 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0))
         {
-            if (_shot == true && Time.time > _internalShotSpeed && _remainingBullet != 0)
+            if (_shot && Time.time > _internalShotSpeed && _remainingBullet != 0)
             {
                 Shot();
                 _internalShotSpeed = Time.time + _externalShotSpeed;
@@ -94,12 +95,7 @@ public class Gun : MonoBehaviour
 
     public void Shot()
     {
-        _shotSound.Play();
-        _shotEffect.Play();
-        _animator.Play("Shot");
-        _remainingBullet--;
-        _remainingBulletText.text = _remainingBullet.ToString();
-
+        ShotTechnicalOperations();
 
         RaycastHit hit;
         if (Physics.Raycast(_myCam.transform.position, transform.forward, out hit, _range))
@@ -163,5 +159,18 @@ public class Gun : MonoBehaviour
                 _remainingBulletText.text = _remainingBullet.ToString();
                 break;
         }
+    }
+
+    public void ShotTechnicalOperations()
+    {
+        _shotSound.Play();
+        _shotEffect.Play();
+        _animator.Play("Shot");
+        _remainingBullet--;
+        _remainingBulletText.text = _remainingBullet.ToString();
+
+        GameObject obje = Instantiate(_bulletHive, _bulletPoint.transform.position, _bulletPoint.transform.rotation);
+        Rigidbody rb = obje.GetComponent<Rigidbody>();
+        rb.AddRelativeForce(new Vector3(10f, 1, 0) * 20);
     }
 }
