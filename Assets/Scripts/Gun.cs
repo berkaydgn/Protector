@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private AudioSource _shotSound;
     [SerializeField] private AudioSource _reload;
     [SerializeField] private AudioSource _finishedBullet;
+    [SerializeField] private AudioSource _buyBullets;   
 
     [Header("EFFECTS")]
     [SerializeField] private ParticleSystem _shotEffect;
@@ -38,6 +39,10 @@ public class Gun : MonoBehaviour
 
     [SerializeField] private GameObject _bulletHive;
     [SerializeField] private GameObject _bulletPoint;
+    [SerializeField] private GameObject _gunTip;
+    public AmmoBoxCreate _ammoBoxCreate;
+
+
     private void Start()
     {
         _remainingBullet = _magazine;
@@ -64,6 +69,12 @@ public class Gun : MonoBehaviour
         {
             StartCoroutine(Reload());
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            BuyBullets();
+        }
+
     }
 
     IEnumerator Reload()
@@ -98,7 +109,7 @@ public class Gun : MonoBehaviour
         ShotTechnicalOperations();
 
         RaycastHit hit;
-        if (Physics.Raycast(_myCam.transform.position, transform.forward, out hit, _range))
+        if (Physics.Raycast(_gunTip.transform.position, transform.forward, out hit, _range))
         {
             if (hit.transform.gameObject.CompareTag("Enemy"))
             {
@@ -173,4 +184,54 @@ public class Gun : MonoBehaviour
         Rigidbody rb = obje.GetComponent<Rigidbody>();
         rb.AddRelativeForce(new Vector3(10f, 1, 0) * 20);
     }
+
+    public void BuyBullets()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(_gunTip.transform.position, transform.forward, out hit, 100))
+        {
+            if (hit.transform.CompareTag("AmmoBox"))
+            {
+                SaveBullets(hit.transform.GetComponent<AmmoBox>()._randomWeapon, hit.transform.GetComponent<AmmoBox>()._randomBullet);
+                _ammoBoxCreate.DeletePoints(hit.transform.GetComponent<AmmoBox>()._pointValue);
+                Destroy(hit.transform.gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("AmmoBox"))
+        {
+            SaveBullets(other.transform.GetComponent<AmmoBox>()._randomWeapon, other.transform.GetComponent<AmmoBox>()._randomBullet);
+            _ammoBoxCreate.DeletePoints(other.transform.GetComponent<AmmoBox>()._pointValue);
+            Destroy(other.transform.gameObject);
+        }
+    }
+
+    public void SaveBullets(string weapon, int bullet)
+    {
+        _buyBullets.Play();
+
+        switch (weapon)
+        {
+            case "ak47":
+                _totalBullets += bullet;
+                MagazineReplacementTechnical("normal");
+                break;
+
+            case "shotgun":
+               
+                break;
+
+            case "sniper":
+                
+                break;
+
+            case "magnum":
+             
+                break;
+        }
+    }
+
 }

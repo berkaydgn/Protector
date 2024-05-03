@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Road
+  - AmmoBox
   layers:
   - Default
   - TransparentFX
