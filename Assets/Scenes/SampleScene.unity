@@ -2891,7 +2891,7 @@ GameObject:
   - component: {fileID: 800151579}
   - component: {fileID: 800151578}
   m_Layer: 0
-  m_Name: GameController
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18849,15 +18849,14 @@ MonoBehaviour:
   _shotEffect: {fileID: 3113893648030587547}
   _bulletTrace: {fileID: 1088546878578059482, guid: e9216783460d15f4aad7823997868c63, type: 3}
   _bloodEffect: {fileID: 4826331845018425068, guid: 6a244322184b9274ba358f7fd19ccddc, type: 3}
-  _totalBullets: 25
-  _magazine: 500
-  _remainingBullet: 0
+  _magazine: 30
   _totalBulletsText: {fileID: 633778479}
   _remainingBulletText: {fileID: 435934165}
   _myCam: {fileID: 8099631096193725807}
   _bulletHive: {fileID: 7351537718479408677, guid: 8c23e2d1d67ab564b9d5d1cdebe331b3, type: 3}
   _bulletPoint: {fileID: 222562268}
   _gunTip: {fileID: 1673736573}
+  _WeaponName: ak47
   _ammoBoxCreate: {fileID: 800151578}
 --- !u!1 &5215259055632036078
 GameObject:

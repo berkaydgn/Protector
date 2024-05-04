@@ -27,9 +27,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private ParticleSystem _bloodEffect;
 
     [Header("WEAPON SETTINGS")]
-    [SerializeField] private int _totalBullets;
+    private int _totalBullets;
     [SerializeField] private int _magazine;
-    [SerializeField] private int _remainingBullet;
+    private int _remainingBullet;
     [SerializeField] private TextMeshProUGUI _totalBulletsText;
     [SerializeField] private TextMeshProUGUI _remainingBulletText;
 
@@ -40,13 +40,15 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject _bulletHive;
     [SerializeField] private GameObject _bulletPoint;
     [SerializeField] private GameObject _gunTip;
+    [SerializeField] private string _WeaponName;
     public AmmoBoxCreate _ammoBoxCreate;
 
 
     private void Start()
     {
-        _remainingBullet = _magazine;
         _animator = GetComponent<Animator>();
+        _totalBullets = PlayerPrefs.GetInt(_WeaponName + "_Ammo");
+        FirstReload();
         MagazineReplacementTechnical("normal");
     }
 
@@ -133,11 +135,13 @@ public class Gun : MonoBehaviour
                     {
                         _remainingBullet = _magazine;
                         _totalBullets = totalValue - _magazine;
+                        PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                     }
                     else
                     {
                         _remainingBullet += _totalBullets;
                         _totalBullets = 0;
+                        PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                     }
                 }
                 else
@@ -145,6 +149,7 @@ public class Gun : MonoBehaviour
                     _bulletFired = _magazine - _remainingBullet;
                     _totalBullets -= _bulletFired;
                     _remainingBullet = _magazine;
+                    PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                 }
                 _totalBulletsText.text = _totalBullets.ToString();
                 _remainingBulletText.text = _remainingBullet.ToString();
@@ -155,11 +160,13 @@ public class Gun : MonoBehaviour
                 {
                     _remainingBullet = _totalBullets;
                     _totalBullets = 0;
+                    PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                 }
                 else
                 {
                     _totalBullets -= _magazine;
                     _remainingBullet = _magazine;
+                    PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                 }
                 _totalBulletsText.text = _totalBullets.ToString();
                 _remainingBulletText.text = _remainingBullet.ToString();
@@ -199,6 +206,22 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public void FirstReload()
+    {
+        if (_totalBullets <= _magazine)
+        {
+            _remainingBullet = _totalBullets;
+            _totalBullets = 0;
+            PlayerPrefs.SetInt(_WeaponName + "_Ammo", 0);
+        }
+        else
+        {
+            _remainingBullet = _magazine;
+            _totalBullets -= _magazine;
+            PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("AmmoBox"))
@@ -217,21 +240,24 @@ public class Gun : MonoBehaviour
         {
             case "ak47":
                 _totalBullets += bullet;
+                PlayerPrefs.SetInt(_WeaponName + "_Ammo", _totalBullets);
                 MagazineReplacementTechnical("normal");
                 break;
 
             case "shotgun":
-               
+
+                PlayerPrefs.SetInt("shotgun_Ammo", PlayerPrefs.GetInt("shotgun_Ammo") + bullet);
                 break;
 
             case "sniper":
-                
+
+                PlayerPrefs.SetInt("sniper_Ammo", PlayerPrefs.GetInt("sniper_Ammo") + bullet);
                 break;
 
             case "magnum":
-             
+
+                PlayerPrefs.SetInt("magnum_Ammo", PlayerPrefs.GetInt("magnum_Ammo") + bullet);
                 break;
         }
     }
-
 }

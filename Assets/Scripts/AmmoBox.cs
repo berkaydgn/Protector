@@ -17,10 +17,9 @@ public class AmmoBox : MonoBehaviour
 
     void Start()
     {
-        int _randomWeaponValue = Random.RandomRange(0, Weaponry.Length - 1);
+        int _randomWeaponValue = Random.RandomRange(0, Weaponry.Length);
         _randomWeapon = Weaponry[_randomWeaponValue];
-        _randomBullet = Bullets[Random.RandomRange(0, Bullets.Length - 1)];
+        _randomBullet = Bullets[Random.RandomRange(0, Bullets.Length)];
         _randomWeaponImage.sprite = WeaponSprites[_randomWeaponValue];
-        
     }
-}
+}   
