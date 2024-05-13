@@ -3,7 +3,12 @@ guid: b698adaf5ff535c449f8a547d12dab0f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dbshotty
+    second: {fileID: 2100000, guid: 1935c49afea180145aff5c2576c655f3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
