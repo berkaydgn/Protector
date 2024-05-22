@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,9 +13,15 @@ public class GameManager : MonoBehaviour
     public Image _healthBar;
     public float _health;
     public GameObject _gameOverCanvas;
+    public int _totalNumberEnemies;
+    public static int _remainingNumberEnemies;
+    public TextMeshProUGUI _remainingNumberEnemiesText;
+    public GameObject _winCanvas;
 
     void Start()
     {
+        _remainingNumberEnemies = _totalNumberEnemies;
+        _remainingNumberEnemiesText.text = _totalNumberEnemies.ToString();
         _health = 100f;
         if (!PlayerPrefs.HasKey("GameStarted"))
         {
@@ -35,14 +42,32 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
 
-            int _enemies = Random.RandomRange(0, Enemies.Length);
-            int _enemyExitPoint = Random.RandomRange(0, EnemyExitPoints.Length);
-            int _defendPoint = Random.RandomRange(0, DefendPoints.Length);
+            if (_totalNumberEnemies != 0)
+            {
+                int _enemies = Random.RandomRange(0, Enemies.Length);
+                int _enemyExitPoint = Random.RandomRange(0, EnemyExitPoints.Length);
+                int _defendPoint = Random.RandomRange(0, DefendPoints.Length);
 
-            GameObject obje = Instantiate(Enemies[_enemies], EnemyExitPoints[_enemyExitPoint].transform.position, Quaternion.identity);
-            obje.GetComponent<Enemy>().GoalSetting(DefendPoints[_defendPoint]);
+                GameObject obje = Instantiate(Enemies[_enemies], EnemyExitPoints[_enemyExitPoint].transform.position, Quaternion.identity);
+                obje.GetComponent<Enemy>().GoalSetting(DefendPoints[_defendPoint]);
+                _totalNumberEnemies--;
+            }
         }
+    }
 
+    public void EnemiesCountUpdate()
+    {
+        _remainingNumberEnemies--;
+        if (_remainingNumberEnemies <= 0)
+        {
+            _winCanvas.SetActive(true);
+            _remainingNumberEnemiesText.text = "0";
+            Time.timeScale = 0;
+        }
+        else
+        {
+            _remainingNumberEnemiesText.text = _remainingNumberEnemies.ToString();
+        }
     }
 
     public void HealthBar(float damage)

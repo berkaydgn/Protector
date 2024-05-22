@@ -9,11 +9,14 @@ public class Enemy : MonoBehaviour
     NavMeshAgent _agent;
     public int _health;
     public float _enemyDamage;
+    private GameObject _gameManager;
+    Animator _animator;
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
+        _gameManager = GameObject.FindWithTag("GameManager");
         _agent = GetComponent<NavMeshAgent>();
-        //_gameManager = GetComponent<GameManager>();
     }
 
     public void GoalSetting(GameObject target)
@@ -35,18 +38,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Dead()
-    {
-        Destroy(gameObject);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Target"))
         {
-            GameObject _gameManager = GameObject.FindWithTag("GameManager");
             _gameManager.GetComponent<GameManager>().HealthBar(_enemyDamage);
             Dead();
         }
+    }
+
+    void Dead()
+    {
+        _animator.SetTrigger("Dead");
+        _gameManager.GetComponent<GameManager>().EnemiesCountUpdate();
+        Destroy(gameObject, 5f);
     }
 }
